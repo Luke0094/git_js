@@ -1,0 +1,12 @@
+/*SELETTORI CSS*/
+/*SELETTORI ID*/ 
+
+#titolo{
+color: orange;
+}
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+font-size: 22px;
+
+#paragrafo{
+    color: blue;
+    font-family: 'Gill Sans, 'Gill Sans MT, Calibri;
