@@ -4,15 +4,20 @@ body {
     background-color: #f9f9f9;
     font-size: 18px;
 }
+
+#todoList, .control-box {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
 #todoList {
-    margin-top: 20px;
     list-style-type: none;
     padding: 0;
-    width: 100%;
-    max-width: 500px;
 }
+
 .todo-item {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -21,69 +26,97 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .todo-item span {
-    flex: 1;
+    flex: 1 0 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
+    margin-bottom: 10px;
 }
+
 .todo-item.completed span {
     text-decoration: line-through;
     color: #888;
 }
+
 .todo-item .buttons {
     display: flex;
-    flex-direction: column;
-    margin-left: 10px;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
 }
-.todo-item button {
-    margin-top: 5px;
+
+.todo-item button,
+#todoForm button {
+    margin-left: 5px;
     padding: 8px 12px;
     border: none;
     border-radius: 5px;
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
 }
-.todo-item button:hover {
+
+.todo-item button:hover,
+#todoForm button:hover {
     background-color: #0056b3;
 }
+
 .control-box {
-    margin-top: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
-    max-width: 500px;
-    background-color: white;
 }
+
 #todoForm {
     display: flex;
     flex-direction: column;
 }
+
 #todoInput,
-#todoDateTime {
+#todoDateTime,
+.edit-input,
+.edit-date {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
 }
-.edit-input {
-    display: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: calc(100% - 20px);
-    font-size: 18px;
-}
+
+.edit-input,
 .edit-date {
     display: none;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: calc(100% - 20px);
-    font-size: 18px;
+    width: 100%;
+}
+
+.edit-date {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.edit-mode .edit-input,
+.edit-mode .edit-date {
+    display: block;
+}
+
+.edit-mode span {
+    display: none;
+}
+
+.todo-item .confirm,
+.todo-item .cancel {
+    display: none;
+}
+
+.edit-mode .edit,
+.edit-mode .delete {
+    display: none;
+}
+
+.edit-mode .confirm,
+.edit-mode .cancel {
+    display: inline-block;
 }
