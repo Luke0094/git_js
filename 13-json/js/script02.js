@@ -7,8 +7,8 @@ console.log(dati);
 
 console.log(dati.data[0].first_name, dati.data[0].last_name);
 console.log(dati.data[1].first_name, dati.data[1].last_name);
-console.log(dati.data[2].first_name, dati.data[2].last_name);
 console.log(dati.data[3].first_name, dati.data[3].last_name);
+console.log(dati.data[4].first_name, dati.data[4].last_name);
 
 //faccio un ciclo for su dati.data
 

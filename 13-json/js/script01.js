@@ -12,11 +12,11 @@ console.log(studente.nome);
 console.log(typeof studente);
 
 //scrivo lo studente in formato json (praticamente una stringa)
-let studentejson = '("nome":"pippo", "cognome":"rossi", "matricola":1, "email":"pippo@rossi.it", "matricola": 1, "corsi":["HTML", "js", "py"]}';
+let studenteJSON = '("nome": "pippo", "cognome": "rossi", "matricola": 1, "email": "pippo@rossi.it", "corsi": ["HTML", "js", "py"]}';
 
-console.log(studentejson.nome);
-console.log(typeof studentejson);
-console.log(studentejson);
+console.log(studenteJSON.nome);
+console.log(typeof studenteJSON);
+console.log(studenteJSON);
 
 //docente
 class Docente {
@@ -31,17 +31,18 @@ class Docente {
     }
 }
 
-let docente = new Docente("Dario", "Manillo", "JS");
+let docente1 = new Docente("Dario", "Manillo", "JS");
 console.log("Questo docente: ", docente1, "è di tipo " + typeof docente1);
 
 //trasformo questo oggetti in json
+let docente = '{"nome": Dario", "cognome": "Manillo", "corsi": ["JS"] }';
 
-let docentejson = JSON.stringify(docente);
-console.log(docentejson);
+let docenteJSON = JSON.stringify(docente1);
+console.log(docenteJSON);
 
-//respo corso
+//responsabile corso
 let respoCorso = '{"nome": "Egle", "cognome": "Risola", "corsi": ["Python", "TSS", "Smistamento Reti"] }';
 
-let respocorsojson = JSON.parse(respoCorso);
+let respoCorsoJSON = JSON.parse(respoCorso);
 
-console.log(respoCorsojson);
+console.log(respoCorso , "è un oggetto di tipo " + typeof respoCorso);
