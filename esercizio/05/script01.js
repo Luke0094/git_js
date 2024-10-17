@@ -1,32 +1,35 @@
-let demo = document.querySelector("#demo");
+const productGrid = document.querySelector("#product-grid");
 
-let products = [];
+const API_URL = "https://dummyjson.com/products"; 
 
-const URL = "https://dummyjson.com/products"; 
-
-fetch(URL).then(products =>{
-    return products.json();
-    }).then(Response => {
-
-        console.log(Response);
-
-        console.log(Response.products[0].title);
-    
-        products = Response.products;
-
-    Response.products.forEach(products =>{
-        demo.innerHTML += createRigaProducts(products.id, products.title, products.price, products.description, products.thumbnail);
-    });
-
-    }).catch((e) => {
-        console.log(e);
+fetch(API_URL)
+    .then(response => response.json())
+    .then(data => {
+        data.products.forEach(product => {
+            productGrid.innerHTML += createProductCard(
+                product.id,
+                product.title,
+                product.price,
+                product.description,
+                product.thumbnail
+            );
+        });
+    })
+    .catch(error => {
+        console.error("Errore nel recupero dei prodotti:", error);
     })
     .finally(() => {
-    
-    console.log("END!"); 
+        console.log("Chiamata API completata.");
     });
 
-function createRigaProducts(id, title, price, description, thumbnail){
-    let riga = `<div> ${id}, ${title}, ${price}, ${description},<img src='${thumbnail}'> </div>`;
-    return riga;
-};
+function createProductCard(id, title, price, description, thumbnail) {
+    return `
+        <div>
+            <p class="product-id">ID: ${id}</p>
+            <img src="${thumbnail}" alt="${title}">
+            <h3>${title}</h3>
+            <p>${description}</p>
+            <p class="price">$${price}</p>
+        </div>
+    `;
+}
