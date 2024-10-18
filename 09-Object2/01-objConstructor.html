@@ -6,15 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Oggetti con funzione construttore</h1>
 
-    <form>
+    <h1>Oggetti con funzione costruttore</h1>
+    
+    <form id="mioForm">
         <input type="text" id="username" placeholder="Inserisci il tuo username"><br>
-        <input type="text" id="email" placeholder="Inserisci la tua email"><br>
-        <input type="text" id="password" placeholder="Inserisci la tua password"><br>
+        <input type="email" id="email" placeholder="Scrivi la tua email"><br>
+        <input type="password" id="password" placeholder="Digita una password"><br>
+        <textarea id="messaggio"></textarea>
+
+        <input type="button" value="Invia" id="btnInvia">
     </form>
 
-    
+    <hr>
+
+    <button id="btnStampa">Stampa all Users</button>
+
+    <div id="demo"></div>
+
     <script src="./js/script01.js"></script>
 </body>
 </html>
