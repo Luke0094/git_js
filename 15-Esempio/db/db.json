@@ -29,13 +29,9 @@
     }
   ],
   "carrello": [
-    {
-      "id": "a84a",
-      "prodottoId": "3",
-      "nome": "San Severia",
-      "prezzo": "11.90",
-      "quantita": 1
-    }
+    
   ],
-  "acquisti": []
+  "acquisti": [
+  
+  ]
 }
