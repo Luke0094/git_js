@@ -1,7 +1,7 @@
 // Limita la selezione a un massimo di 3 corsi
-document.querySelectorAll(".course-checkbox").forEach((checkbox) => {
+document.querySelectorAll(".course-selection input[type='checkbox']").forEach((checkbox) => {
     checkbox.addEventListener("change", function () {
-        const selectedCheckboxes = document.querySelectorAll(".course-checkbox:checked");
+        const selectedCheckboxes = document.querySelectorAll(".course-selection input[type='checkbox']:checked");
         const errorDiv = document.getElementById("courseSelectionError");
 
         if (selectedCheckboxes.length > 3) {
@@ -18,23 +18,23 @@ document.querySelectorAll(".course-checkbox").forEach((checkbox) => {
 });
 
 // Gestione del form di candidatura
-document.getElementById("candidaturaForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Evita il refresh della pagina
+document.querySelector("#applyModal .modal-content").addEventListener("submit", function (e) {
+    e.preventDefault();
 
     let isValid = true;
 
     // Lista dei campi da validare
     const fields = [
-        { id: "nome", message: "Il campo Nome è obbligatorio." },
-        { id: "cognome", message: "Il campo Cognome è obbligatorio." },
-        { id: "telefono", message: "Il campo Telefono è obbligatorio." },
-        { id: "email", message: "Il campo Email è obbligatorio." },
-        { id: "indirizzo", message: "Il campo Indirizzo è obbligatorio." }
+        { selector: "input[placeholder='Nome']", message: "Il campo Nome è obbligatorio." },
+        { selector: "input[placeholder='Cognome']", message: "Il campo Cognome è obbligatorio." },
+        { selector: "input[placeholder='Telefono']", message: "Il campo Telefono è obbligatorio." },
+        { selector: "input[placeholder='Email']", message: "Il campo Email è obbligatorio." },
+        { selector: "input[placeholder='Indirizzo']", message: "Il campo Indirizzo è obbligatorio." }
     ];
 
     // Valida ogni campo e mostra l'errore se è vuoto
     fields.forEach((field) => {
-        const input = document.getElementById(field.id);
+        const input = this.querySelector(field.selector);
         const errorDiv = input.nextElementSibling;
 
         if (input.value.trim() === "") {
@@ -49,7 +49,7 @@ document.getElementById("candidaturaForm").addEventListener("submit", function (
     });
 
     // Verifica che almeno un corso sia selezionato
-    const selectedCourses = document.querySelectorAll(".course-checkbox:checked");
+    const selectedCourses = this.querySelectorAll(".course-selection input[type='checkbox']:checked");
     const courseSelectionError = document.getElementById("courseSelectionError");
 
     if (selectedCourses.length === 0) {
@@ -65,7 +65,7 @@ document.getElementById("candidaturaForm").addEventListener("submit", function (
     }
 
     // Verifica accettazione privacy
-    const privacyCheck = document.getElementById("privacyCheck");
+    const privacyCheck = this.querySelector(".form-check-input[type='checkbox']");
     if (!privacyCheck.checked) {
         privacyCheck.classList.add("is-invalid");
         isValid = false;
@@ -84,16 +84,16 @@ document.getElementById("candidaturaForm").addEventListener("submit", function (
         successModal.show();
 
         // Reset del form
-        document.getElementById("candidaturaForm").reset();
+        this.reset();
     }
 });
 
 // Gestione del form di login
-document.getElementById("loginForm").addEventListener("submit", function (e) {
+document.querySelector("#loginModal .modal-content").addEventListener("submit", function (e) {
     e.preventDefault();
     let isValid = true;
-    const username = document.getElementById("username");
-    const password = document.getElementById("password");
+    const username = this.querySelector("input[placeholder='Username']");
+    const password = this.querySelector("input[placeholder='Password']");
 
     // Validazione username
     if (username.value.trim() === "") {
@@ -115,7 +115,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
     // Simulazione del controllo delle credenziali
     if (username.value === "utente" && password.value === "password123") {
-        document.getElementById("authLinks").innerHTML = `
+        const navbarNav = document.querySelector("#navbarNav");
+        const authLinks = navbarNav.querySelector("ul:last-child");
+        authLinks.innerHTML = `
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Benvenuto, ${username.value}
@@ -136,7 +138,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         const loginSuccessModal = new bootstrap.Modal(document.getElementById("loginSuccessModal"));
         loginSuccessModal.show();
 
-        document.getElementById("loginForm").reset();
+        this.reset();
     } else {
         const errorMsg = document.getElementById("loginError");
         errorMsg.style.display = "block";
@@ -159,11 +161,12 @@ document.querySelector('.privacy-link').addEventListener('click', function(e) {
 
 // Reset form dopo chiusura modal di successo
 document.getElementById('successModal').addEventListener('hidden.bs.modal', function () {
-    document.getElementById("candidaturaForm").reset();
-    document.querySelectorAll('.is-invalid').forEach(element => {
+    const applyModal = document.querySelector("#applyModal .modal-content");
+    applyModal.reset();
+    applyModal.querySelectorAll('.is-invalid').forEach(element => {
         element.classList.remove('is-invalid');
     });
-    document.querySelectorAll('.invalid-feedback').forEach(element => {
+    applyModal.querySelectorAll('.invalid-feedback').forEach(element => {
         element.style.display = 'none';
     });
 });
