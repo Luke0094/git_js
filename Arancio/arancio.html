@@ -16,7 +16,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -24,7 +24,7 @@
                         <a class="nav-link" href="#">Progetti</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav" id="authLinks">
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Candidati</a>
                     </li>
@@ -39,7 +39,7 @@
     <!-- Main content -->
     <main class="flex-shrink-0">
         <div class="container">
-            <!-- Il contenuto principale andrà qui -->
+            <!-- Qui il tuo contenuto principale -->
         </div>
     </main>
 
@@ -52,102 +52,104 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" placeholder="Nome" required>
-                            <div class="invalid-feedback">
-                                Il campo Nome è obbligatorio.
+                    <form id="candidaturaForm" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                                <div class="invalid-feedback">
+                                    Il campo Nome è obbligatorio.
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" placeholder="Cognome" required>
-                            <div class="invalid-feedback">
-                                Il campo Cognome è obbligatorio.
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="cognome" placeholder="Cognome" required>
+                                <div class="invalid-feedback">
+                                    Il campo Cognome è obbligatorio.
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="tel" class="form-control" placeholder="Telefono" required>
-                            <div class="invalid-feedback">
-                                Il campo Telefono è obbligatorio.
+                            <div class="col-md-6 mb-3">
+                                <input type="tel" class="form-control" id="telefono" placeholder="Telefono" required>
+                                <div class="invalid-feedback">
+                                    Il campo Telefono è obbligatorio.
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                            <div class="invalid-feedback">
-                                Il campo Email è obbligatorio.
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <div class="invalid-feedback">
+                                    Il campo Email è obbligatorio.
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <input type="text" class="form-control" placeholder="Indirizzo" required>
-                            <div class="invalid-feedback">
-                                Il campo Indirizzo è obbligatorio.
+                            <div class="col-md-12 mb-3">
+                                <input type="text" class="form-control" id="indirizzo" placeholder="Indirizzo" required>
+                                <div class="invalid-feedback">
+                                    Il campo Indirizzo è obbligatorio.
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <p>Corsi scelti (seleziona fino a 3)</p>
-                            <div class="course-selection">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="cucina">
-                                    <label class="form-check-label">Cucina Italiana</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="arte">
-                                    <label class="form-check-label">Storia dell'Arte</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="lingua">
-                                    <label class="form-check-label">Lingua Italiana</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="moda">
-                                    <label class="form-check-label">Moda Italiana</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="scultura">
-                                    <label class="form-check-label">Scultura</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="fotografia">
-                                    <label class="form-check-label">Fotografia</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="poesia">
-                                    <label class="form-check-label">Poesia</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="ceramica">
-                                    <label class="form-check-label">Ceramica</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="architettura">
-                                    <label class="form-check-label">Architettura</label>
+                            <div class="col-md-12 mb-3">
+                                <p>Corsi scelti (seleziona fino a 3)</p>
+                                <div class="course-selection">
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="cucina">
+                                        <label class="form-check-label">Cucina Italiana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="arte">
+                                        <label class="form-check-label">Storia dell'Arte</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="lingua">
+                                        <label class="form-check-label">Lingua Italiana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="moda">
+                                        <label class="form-check-label">Moda Italiana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="scultura">
+                                        <label class="form-check-label">Scultura</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="fotografia">
+                                        <label class="form-check-label">Fotografia</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="poesia">
+                                        <label class="form-check-label">Poesia</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="ceramica">
+                                        <label class="form-check-label">Ceramica</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="architettura">
+                                        <label class="form-check-label">Architettura</label>
+                                    </div>
                                 </div>
                                 <div id="courseSelectionError" class="invalid-feedback"></div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="file" class="form-control" required>
-                            <small class="form-text text-muted">Carica Documento di Identità</small>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <input type="file" class="form-control" required>
-                            <small class="form-text text-muted">Carica Codice Fiscale</small>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" required>
-                                <label class="form-check-label">
-                                    Ho letto e accetto le <a href="#" class="privacy-link" data-bs-toggle="modal" data-bs-target="#privacyModal">condizioni di utilizzo dei dati</a>
-                                </label>
-                                <div class="invalid-feedback">
-                                    Devi accettare le condizioni per proseguire.
+                            <div class="col-md-6 mb-3">
+                                <input type="file" class="form-control" required>
+                                <small class="form-text text-muted">Carica Documento di Identità</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="file" class="form-control" required>
+                                <small class="form-text text-muted">Carica Codice Fiscale</small>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                    <label class="form-check-label" for="privacyCheck">
+                                        Ho letto e accetto le <a href="#" class="privacy-link">condizioni di utilizzo dei dati</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Devi accettare le condizioni per proseguire.
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Invia</button>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Invia</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -163,31 +165,27 @@
                 </div>
                 <div class="modal-body">
                     <ol>
-                        <li>
-                            <strong>Raccolta dei dati personali</strong>
+                        <li><strong>Raccolta dei dati personali</strong>
                             <ul>
                                 <li>Nome, cognome, indirizzo email e numero di telefono</li>
                                 <li>Documento di identità e codice fiscale</li>
                                 <li>Preferenze relative ai corsi</li>
                             </ul>
                         </li>
-                        <li>
-                            <strong>Utilizzo dei dati</strong>
+                        <li><strong>Utilizzo dei dati</strong>
                             <ul>
                                 <li>Gestione delle iscrizioni ai corsi</li>
                                 <li>Comunicazioni relative ai corsi scelti</li>
                                 <li>Finalità amministrative e contabili</li>
                             </ul>
                         </li>
-                        <li>
-                            <strong>Conservazione dei dati</strong>
+                        <li><strong>Conservazione dei dati</strong>
                             <ul>
                                 <li>I dati saranno conservati per la durata del corso</li>
                                 <li>Dopo il termine verranno conservati per gli obblighi di legge</li>
                             </ul>
                         </li>
-                        <li>
-                            <strong>Diritti dell'utente</strong>
+                        <li><strong>Diritti dell'utente</strong>
                             <ul>
                                 <li>Accesso ai propri dati</li>
                                 <li>Rettifica o cancellazione</li>
@@ -195,8 +193,7 @@
                                 <li>Portabilità dei dati</li>
                             </ul>
                         </li>
-                        <li>
-                            <strong>Condivisione dei dati</strong>
+                        <li><strong>Condivisione dei dati</strong>
                             <ul>
                                 <li>I dati non saranno ceduti a terzi</li>
                                 <li>Potranno essere condivisi con docenti e staff amministrativo</li>
@@ -241,22 +238,24 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Username" required>
-                        <div class="invalid-feedback">
-                            Il campo Username è obbligatorio.
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="username" placeholder="Username" required>
+                            <div class="invalid-feedback">
+                                Il campo Username è obbligatorio.
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" class="form-control" placeholder="Password" required>
-                        <div class="invalid-feedback">
-                            Il campo Password è obbligatorio.
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            <div class="invalid-feedback">
+                                Il campo Password è obbligatorio.
+                            </div>
                         </div>
-                    </div>
-                    <div id="loginError" class="invalid-feedback">
-                        Dati non corretti. Riprova.
-                    </div>
-                    <button type="submit" class="btn btn-primary">Accedi</button>
+                        <div id="loginError" class="invalid-feedback">
+                            Dati non corretti. Riprova.
+                        </div>
+                        <button type="submit" class="btn btn-primary">Accedi</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -287,9 +286,7 @@
     <footer class="footer mt-auto py-3">
         <div class="container text-center">
             <p class="mb-0">
-                Contatti: <a href="mailto:info@italia.com">info@italia.com</a> | 
-                <a href="tel:+391234567890">+39 123 456 7890</a> | 
-                Via Roma, 10, 00100 Roma, Italia
+                Contatti: info@italia.com | +39 123 456 7890 | Via Roma, 10, 00100 Roma, Italia
             </p>
             <p class="mb-0">© 2024 - Un'esperienza Italiana</p>
         </div>
