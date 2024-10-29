@@ -1,0 +1,32 @@
+{
+    "corsi" : [
+        {
+          "name": "Color Coding Basics",
+          "description": "A comprehensive course on the basics of color theory and its applications in design.",
+          "duration": "6 weeks",
+          "price": 120,
+          "id": 1,
+          "shortDescription": "Learn the fundamentals of color theory.",
+          "img": "../img/colorCoding.webp"
+        },
+        {
+          "name": "Creative Teamwork",
+          "description": "A workshop focused on building creativity and collaboration skills in teams.",
+          "duration": "4 weeks",
+          "price": 150,
+          "id": 2,
+          "shortDescription": "Boost creativity in team settings.",
+          "img": "../img/signoraCreativa.webp"
+        },
+        {
+          "name": "Creative Visualization Techniques",
+          "description": "Master the art of turning abstract ideas into visual representations.",
+          "duration": "8 weeks",
+          "price": 200,
+          "id": 3,
+          "shortDescription": "Learn to visualize your creative ideas.",
+          "img": "../img/teamCreativness.jpg"
+        }
+      ]
+      
+}

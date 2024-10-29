@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un'esperienza Italiana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body class="d-flex flex-column h-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo Italia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Progetti</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav" id="authLinks">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Candidati</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Accedi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    
+    <main class="flex-shrink-0">
+        <div class="container">
+            <!-- Il contenuto principale andrà qui -->
+
+            <div class="container">
+                <div class="row" id="rigaCorsi">
+                
+                </div>
+                
+    
+            </div>
+
+
+             
+        </div>
+    </main>
+
+    <!-- Apply Modal -->
+    <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyModalLabel">Modulo di Candidatura</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="candidaturaForm" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                                <div class="invalid-feedback">
+                                    Il campo Nome è obbligatorio.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="cognome" placeholder="Cognome" required>
+                                <div class="invalid-feedback">
+                                    Il campo Cognome è obbligatorio.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="tel" class="form-control" id="telefono" placeholder="Telefono" required>
+                                <div class="invalid-feedback">
+                                    Il campo Telefono è obbligatorio.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                <div class="invalid-feedback">
+                                    Il campo Email è obbligatorio.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <input type="text" class="form-control" id="indirizzo" placeholder="Indirizzo" required>
+                                <div class="invalid-feedback">
+                                    Il campo Indirizzo è obbligatorio.
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <p>Corsi scelti (seleziona fino a 3)</p>
+                                <div class="course-selection">
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="cucina">
+                                        <label class="form-check-label">Cucina Italiana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="arte">
+                                        <label class="form-check-label">Storia dell'Arte</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="lingua">
+                                        <label class="form-check-label">Lingua Italiana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="moda">
+                                        <label class="form-check-label">Moda Italiana</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="scultura">
+                                        <label class="form-check-label">Scultura</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="fotografia">
+                                        <label class="form-check-label">Fotografia</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="poesia">
+                                        <label class="form-check-label">Poesia</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="ceramica">
+                                        <label class="form-check-label">Ceramica</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input course-checkbox" type="checkbox" value="architettura">
+                                        <label class="form-check-label">Architettura</label>
+                                    </div>
+                                </div>
+                                <div id="courseSelectionError" class="invalid-feedback"></div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="file" class="form-control" required>
+                                <small class="form-text text-muted">Carica Documento di Identità</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="file" class="form-control" required>
+                                <small class="form-text text-muted">Carica Codice Fiscale</small>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                    <label class="form-check-label" for="privacyCheck">
+                                        Ho letto e accetto le <a href="#" class="privacy-link">condizioni di utilizzo dei dati</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Devi accettare le condizioni per proseguire.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Invia</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Condizioni di utilizzo dei dati</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol>
+                        <li><strong>Raccolta dei dati personali</strong>
+                            <ul>
+                                <li>Nome, cognome, indirizzo email e numero di telefono</li>
+                                <li>Documento di identità e codice fiscale</li>
+                                <li>Preferenze relative ai corsi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Utilizzo dei dati</strong>
+                            <ul>
+                                <li>Gestione delle iscrizioni ai corsi</li>
+                                <li>Comunicazioni relative ai corsi scelti</li>
+                                <li>Finalità amministrative e contabili</li>
+                            </ul>
+                        </li>
+                        <li><strong>Conservazione dei dati</strong>
+                            <ul>
+                                <li>I dati saranno conservati per la durata del corso</li>
+                                <li>Dopo il termine verranno conservati per gli obblighi di legge</li>
+                            </ul>
+                        </li>
+                        <li><strong>Diritti dell'utente</strong>
+                            <ul>
+                                <li>Accesso ai propri dati</li>
+                                <li>Rettifica o cancellazione</li>
+                                <li>Limitazione del trattamento</li>
+                                <li>Portabilità dei dati</li>
+                            </ul>
+                        </li>
+                        <li><strong>Condivisione dei dati</strong>
+                            <ul>
+                                <li>I dati non saranno ceduti a terzi</li>
+                                <li>Potranno essere condivisi con docenti e staff amministrativo</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Candidatura Inviata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p>La tua richiesta è stata inviata correttamente.</p>
+                        <p>Ti contatteremo presto all'indirizzo email fornito con ulteriori dettagli.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Accedi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="username" placeholder="Username">
+                            <div class="invalid-feedback">
+                                Il campo Username è obbligatorio.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <div class="invalid-feedback">
+                                Il campo Password è obbligatorio.
+                            </div>
+                        </div>
+                        <div id="loginError" class="invalid-feedback">
+                            Dati non corretti. Riprova.
+                        </div>
+                        <button type="submit" class="btn btn-primary">Accedi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Success Modal -->
+    <div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-labelledby="loginSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginSuccessModalLabel">Login Effettuato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <p>Login effettuato con successo.</p>
+                        <p>Benvenuto sulla piattaforma!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <p class="mb-0">
+                Contatti: info@italia.com | +39 123 456 7890 | Via Roma, 10, 00100 Roma, Italia
+            </p>
+            <p class="mb-0">© 2024 - Un'esperienza Italiana</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/scriptPro.js"></script>
+</body>
+</html>
