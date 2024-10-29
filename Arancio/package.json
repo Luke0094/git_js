@@ -1,0 +1,210 @@
+async function loadUserData() {
+    try {
+        const response = await fetch('/api/users/data');
+        if (!response.ok) throw new Error('Errore nel caricamento dei dati utente');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Errore nel caricamento del file JSON:', error);
+        return null;
+    }
+}
+
+async function saveCandidaturaData(formData) {
+    try {
+        const response = await fetch('/api/candidature/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Errore nel salvataggio dei dati');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Errore nel salvataggio dei dati:', error);
+        throw error;
+    }
+}
+
+async function uploadFiles(documentoFile, codiceFiscaleFile) {
+    const formData = new FormData();
+    formData.append('documento', documentoFile);
+    formData.append('codiceFiscale', codiceFiscaleFile);
+
+    try {
+        const response = await fetch('/api/upload/documents', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Errore nel caricamento dei file');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Errore nel caricamento dei file:', error);
+        throw error;
+    }
+}
+
+document.getElementById("candidaturaForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    let isValid = true;
+
+
+    if (isValid) {
+        const loadingButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = loadingButton.innerHTML;
+        
+        try {
+
+            loadingButton.disabled = true;
+            loadingButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Invio in corso...';
+
+            const documentoFile = document.getElementById("documento").files[0];
+            const codiceFiscaleFile = document.getElementById("codice-fiscale").files[0];
+
+            const uploadResult = await uploadFiles(documentoFile, codiceFiscaleFile);
+
+            const registrationData = {
+                personalInfo: {
+                    nome: document.getElementById("nome").value,
+                    cognome: document.getElementById("cognome").value,
+                    telefono: document.getElementById("telefono").value,
+                    email: document.getElementById("email").value,
+                    indirizzo: document.getElementById("indirizzo").value
+                },
+                documents: {
+                    documentoIdentita: uploadResult.documento,
+                    codiceFiscale: uploadResult.codiceFiscale
+                },
+                corsiSelezionati: Array.from(document.querySelectorAll(".course-checkbox:checked"))
+                    .map(checkbox => ({
+                        nomeCorso: checkbox.nextElementSibling.textContent.trim(),
+                        codiceCorso: checkbox.id
+                    })),
+                privacyAccepted: true
+            };
+
+            const result = await saveCandidaturaData(registrationData);
+
+            const applyModal = bootstrap.Modal.getInstance(document.getElementById("applyModal"));
+            applyModal.hide();
+
+            const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+            successModal.show();
+
+            this.reset();
+            document.getElementById("documento-preview").innerHTML = '';
+            document.getElementById("codice-fiscale-preview").innerHTML = '';
+
+        } catch (error) {
+            console.error('Errore durante l\'invio della richiesta:', error);
+            alert(`Si è verificato un errore: ${error.message}`);
+        } finally {
+            loadingButton.disabled = false;
+            loadingButton.innerHTML = originalButtonText;
+        }
+    }
+});
+
+document.getElementById("loginForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    let isValid = true;
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+
+    if (username.value.trim() === "") {
+        username.classList.add("is-invalid");
+        isValid = false;
+    } else {
+        username.classList.remove("is-invalid");
+    }
+    
+    if (password.value.trim() === "") {
+        password.classList.add("is-invalid");
+        isValid = false;
+    } else {
+        password.classList.remove("is-invalid");
+    }
+
+    if (!isValid) return;
+
+    const loadingButton = this.querySelector('button[type="submit"]');
+    const originalButtonText = loadingButton.innerHTML;
+
+    try {
+        loadingButton.disabled = true;
+        loadingButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Accesso...';
+
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username.value,
+                password: password.value
+            })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Credenziali non valide');
+        }
+
+        const userData = await response.json();
+
+        document.getElementById("authLinks").innerHTML = `
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Benvenuto, ${userData.accountInfo.nome} ${userData.accountInfo.cognome}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item" href="#">Profilo</a></li>
+                    <li><a class="dropdown-item" href="#">Calendario corsi (${userData.accountInfo.corsiIscritti.length})</a></li>
+                    <li><a class="dropdown-item" href="#">Assistenza</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="handleLogout()">Logout</a></li>
+                </ul>
+            </li>`;
+        
+        const loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+        loginModal.hide();
+
+        const loginSuccessModal = new bootstrap.Modal(document.getElementById("loginSuccessModal"));
+        loginSuccessModal.show();
+
+        this.reset();
+
+    } catch (error) {
+        console.error('Errore durante il login:', error);
+        const errorMsg = document.getElementById("loginError");
+        errorMsg.style.display = "block";
+        errorMsg.textContent = error.message;
+    } finally {
+        loadingButton.disabled = false;
+        loadingButton.innerHTML = originalButtonText;
+    }
+});
+
+async function handleLogout() {
+    try {
+        const response = await fetch('/api/auth/logout', {
+            method: 'POST'
+        });
+        
+        if (!response.ok) {
+            throw new Error('Errore durante il logout');
+        }
+        
+        location.reload();
+    } catch (error) {
+        console.error('Errore durante il logout:', error);
+        alert('Errore durante il logout. Riprova più tardi.');
+    }
+}

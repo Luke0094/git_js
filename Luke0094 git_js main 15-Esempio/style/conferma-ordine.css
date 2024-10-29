@@ -1,0 +1,76 @@
+/* Stile per lo scroll nella versione web */
+.ordine-lista-container {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #6c757d #f8f9fa;
+}
+
+.ordine-lista-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ordine-lista-container::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+
+.ordine-lista-container::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
+    border-radius: 4px;
+}
+
+/* Stili per la stampa */
+@media print {
+    /* Rimuovi scroll per la stampa */
+    .ordine-lista-container {
+        max-height: none;
+        overflow: visible;
+    }
+
+    /* Ridimensiona le immagini per la stampa */
+    .list-group-item img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    /* Nascondi elementi non necessari per la stampa */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Assicurati che tutto il contenuto sia visibile */
+    .card {
+        break-inside: avoid;
+    }
+
+    /* Ottimizza il layout per la stampa */
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    /* Migliora la leggibilità del testo */
+    body {
+        font-size: 12pt;
+        line-height: 1.3;
+    }
+
+    /* Evita interruzioni indesiderate */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+}
+
+/* Nasconde elementi solo stampa nella visualizzazione web */
+.print-only {
+    display: none;
+}

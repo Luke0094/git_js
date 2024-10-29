@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferma Ordine - Shop Piante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../style/conferma-ordine.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light no-print">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Shop Piante</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./carrello.html">Carrello</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intestazione stampabile -->
+    <div class="container print-only mt-4 mb-4">
+        <div class="text-center">
+            <h2>Shop Piante</h2>
+            <p>La tua conferma d'ordine</p>
+        </div>
+    </div>
+
+    <!-- Contenuto principale -->
+    <main class="container py-4">
+        <!-- Intestazione con pulsante stampa -->
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>Conferma Ordine</h1>
+                    <button onclick="window.print()" class="btn btn-secondary no-print">
+                        <i class="fas fa-print me-2"></i>Stampa ricevuta
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Dettagli ordine -->
+            <div class="col-lg-8">
+                <!-- Card conferma ordine -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="card-title mb-0">Ordine Confermato</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="dettagliOrdine">
+                            <div class="ordine-lista-container no-scroll-print">
+                                <!-- Il contenuto verrà inserito qui -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card dettagli spedizione -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0">Dettagli Spedizione</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="dettagliSpedizione">
+                            <!-- Contenuto dinamico -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Riepilogo ordine -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0">Riepilogo Ordine</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="riepilogoAcquisto">
+                            <!-- Contenuto dinamico -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pulsanti di navigazione -->
+        <div class="row mt-4 no-print">
+            <div class="col-12 d-flex justify-content-between">
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="fas fa-home me-2"></i>Torna alla Home
+                </a>
+                <a href="../index.html#prodotti" class="btn btn-outline-success">
+                    <i class="fas fa-shopping-bag me-2"></i>Continua lo Shopping
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container py-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="mb-0">© 2024 Shop Piante - Tutti i diritti riservati</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/conferma-ordine.js"></script>
+</body>
+</html>

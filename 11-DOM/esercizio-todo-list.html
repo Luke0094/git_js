@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <h1>ToDoList</h1>
+
+    <form>
+
+        <input type="text" placeholder="To Do" id="toDoElement" class="redonBlack">
+
+        <button type="button" value="Add" id="btnAdd" class="button">
+            <i class="bi bi-plus-circle-fill"></i>        
+        </button>
+    </form>
+
+    <ul id="listaToDo">
+    </ul>
+
+   <!-- utilizzando il metodo create element costriuisci la todolist. al lick sul singolo li (list item) deve essere applicata una classe che barra la voce text-decoration: line-through.
+     
+    Per cancellare: costrire, accanto ad ogni singola voce un ppoulsantino come una X al suo inerno. Al click sul pulsante sparisce completamente la voce della lista.
+    
+    per modificare: insierisco accanto alla voce un pulsantino con un penna all'interno, al lick sulla penna viene risportato un alto nel camo input con il testo.
+    
+    Il singolo todo deve essere u oggetto di classe Todo(info, data){}
+    -->
+    <script src="./js/script07.js"></script>
+
+</body>
+</html>

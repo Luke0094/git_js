@@ -1,0 +1,132 @@
+/* Impostazioni di base */
+body {
+    background-color: #FFF3E0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #FF8C42;
+    color: #fff;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #F5F5F5 !important;
+}
+
+/* Modale Candidatura e Accesso */
+.modal-header {
+    background-color: #FF7043;
+    color: #fff;
+}
+
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn-close {
+    color: #fff;
+}
+
+.modal .form-control {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #FF5722;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #E64A19;
+}
+
+/* Stile migliorato per checkbox */
+.modal .form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.modal .form-check-label {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.course-selection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+/* Messaggi di errore */
+.error-message {
+    color: #D32F2F;
+    display: none;
+    font-weight: bold;
+}
+
+.is-invalid {
+    border-color: #D32F2F !important;
+}
+
+.invalid-feedback {
+    color: #D32F2F;
+    display: none;
+    font-size: 0.875em;
+}
+
+/* Footer */
+.footer {
+    background-color: #FF8C42;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #F5F5F5;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background-color: #FF8C42;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Colori per interazione */
+.modal .form-check-input:checked {
+    background-color: #FF5722;
+    border-color: #FF5722;
+}

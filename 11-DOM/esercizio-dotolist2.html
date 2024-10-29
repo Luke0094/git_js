@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            font-size: 18px;
+        }
+        #todoList {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .todo-item span {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .todo-item.completed span {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .todo-item .buttons {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        .todo-item button {
+            margin-top: 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .todo-item button:hover {
+            background-color: #0056b3;
+        }
+        .control-box {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #todoForm {
+            display: flex;
+            flex-direction: column;
+        }
+        #todoInput,
+        #todoDateTime {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .edit-input {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 20px);
+            font-size: 18px;
+        }
+        .edit-date {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 150px;
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">ToDoList</h1>
+    <div class="control-box">
+        <form id="todoForm">
+            <input type="datetime-local" id="todoDateTime" required>
+            <input type="text" id="todoInput" placeholder="Inserisci qui la tua lista" required>
+            <button type="submit">Aggiungi</button>
+        </form>
+    </div>
+    <ul id="todoList"></ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script>
+        class TodoItem {
+            constructor(text, dateTime) {
+                this.originalText = text;
+                this.originalDateTime = dateTime;
+                this.text = text;
+                this.dateTime = dateTime;
+                this.completed = false;
+                this.element = this.createElement();
+            }
+
+            createElement() {
+                const newItem = document.createElement('li');
+                newItem.classList.add('todo-item');
+
+                const formattedDateTime = moment(this.dateTime).format('DD/MM/YYYY HH:mm');
+                const itemText = document.createElement('span');
+                itemText.textContent = `${formattedDateTime}: ${this.text}`;
+
+                itemText.addEventListener('click', () => {
+                    this.toggleCompleted();
+                    newItem.classList.toggle('completed');
+                });
+
+                const editInput = this.createEditInput();
+                const editDateInput = this.createEditDateInput();
+                const buttonsContainer = this.createButtons(itemText, editInput, editDateInput);
+                
+                itemText.addEventListener('dblclick', () => {
+                    this.activateEditMode(itemText, editInput, editDateInput, buttonsContainer);
+                });
+
+                newItem.appendChild(itemText);
+                newItem.appendChild(editDateInput);
+                newItem.appendChild(editInput);
+                newItem.appendChild(buttonsContainer);
+                return newItem;
+            }
+
+            createEditInput() {
+                const editInput = document.createElement('input');
+                editInput.classList.add('edit-input');
+                editInput.type = 'text';
+                editInput.value = this.text;
+
+                return editInput;
+            }
+
+            createEditDateInput() {
+                const editDateInput = document.createElement('input');
+                editDateInput.classList.add('edit-date');
+                editDateInput.type = 'datetime-local';
+                editDateInput.value = this.dateTime;
+
+                return editDateInput;
+            }
+
+            createButtons(itemText, editInput, editDateInput) {
+                const buttonsContainer = document.createElement('div');
+                buttonsContainer.classList.add('buttons');
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Modifica';
+                editButton.addEventListener('click', () => {
+                    this.activateEditMode(itemText, editInput, editDateInput, buttonsContainer);
+                });
+
+                const confirmButton = document.createElement('button');
+                confirmButton.textContent = 'Conferma';
+                confirmButton.style.display = 'none'; 
+                confirmButton.addEventListener('click', () => {
+                    this.updateText(editInput, editDateInput, editButton, confirmButton, buttonsContainer);
+                });
+
+                const cancelButton = document.createElement('button');
+                cancelButton.textContent = 'Cancella';
+                cancelButton.style.display = 'none'; 
+                cancelButton.addEventListener('click', () => {
+                    this.cancelEdit(editInput, editDateInput, itemText, buttonsContainer);
+                });
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Rimuovi';
+                deleteButton.addEventListener('click', () => {
+                    todoList.removeChild(this.element);
+                });
+
+                buttonsContainer.appendChild(editButton);
+                buttonsContainer.appendChild(confirmButton);
+                buttonsContainer.appendChild(cancelButton);
+                buttonsContainer.appendChild(deleteButton); // Always present
+
+                return buttonsContainer;
+            }
+
+            activateEditMode(itemText, editInput, editDateInput, buttonsContainer) {
+                editInput.style.display = 'block';
+                editInput.value = this.text; 
+                editDateInput.style.display = 'block';
+                editDateInput.value = this.dateTime; 
+                editInput.focus();
+                buttonsContainer.querySelector('button').style.display = 'none'; // Hide edit button
+                buttonsContainer.querySelectorAll('button')[1].style.display = 'block'; // Show confirm button
+                buttonsContainer.querySelectorAll('button')[2].style.display = 'block'; // Show cancel button
+                buttonsContainer.querySelectorAll('button')[3].style.display = 'none'; // Hide delete button
+            }
+
+            updateText(editInput, editDateInput, editButton, confirmButton, buttonsContainer) {
+                const newText = editInput.value;
+                const newDateTime = editDateInput.value;
+                if (newText) {
+                    this.text = newText;
+                    this.dateTime = newDateTime;
+                    const formattedDateTime = moment(this.dateTime).format('DD/MM/YYYY HH:mm');
+                    const itemText = this.element.querySelector('span');
+                    itemText.textContent = `${formattedDateTime}: ${newText}`;
+                    editInput.style.display = 'none';
+                    editDateInput.style.display = 'none';
+                    editButton.style.display = 'block'; 
+                    confirmButton.style.display = 'none'; 
+                    buttonsContainer.querySelectorAll('button')[2].style.display = 'none'; // Hide cancel button
+                    buttonsContainer.querySelectorAll('button')[3].style.display = 'block'; // Show delete button
+                }
+            }
+
+            cancelEdit(editInput, editDateInput, itemText, buttonsContainer) {
+                editInput.style.display = 'none';
+                editDateInput.style.display = 'none';
+                buttonsContainer.querySelector('button').style.display = 'block'; // Show edit button
+                buttonsContainer.querySelectorAll('button')[1].style.display = 'none'; // Hide confirm button
+                buttonsContainer.querySelectorAll('button')[2].style.display = 'none'; // Hide cancel button
+                buttonsContainer.querySelectorAll('button')[3].style.display = 'block'; // Show delete button
+            }
+
+            toggleCompleted() {
+                this.completed = !this.completed;
+            }
+        }
+
+        const form = document.getElementById('todoForm');
+        const input = document.getElementById('todoInput');
+        const dateTimeInput = document.getElementById('todoDateTime');
+        const todoList = document.getElementById('todoList');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newTodo = new TodoItem(input.value, dateTimeInput.value);
+            todoList.appendChild(newTodo.element);
+            input.value = '';
+            dateTimeInput.value = '';
+        });
+    </script>
+</body>
+</html>

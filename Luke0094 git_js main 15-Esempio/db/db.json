@@ -1,0 +1,639 @@
+{
+  "profile": {
+    "name": "Dario Mennillo"
+  },
+  "plants": [
+    {
+      "id": "1",
+      "price": 9.9,
+      "name": "Monstera Obliqua",
+      "image": "./img/monstera_obliqua.webp",
+      "descAlt": "Pianta sempreverde di Monstera Obliqua",
+      "produttore": "Dario"
+    },
+    {
+      "id": "2",
+      "price": 5.6,
+      "name": "Crassula",
+      "image": "./img/crassula.webp",
+      "descAlt": "Pianta di crassula o albero di giada",
+      "produttore": "Anna"
+    },
+    {
+      "id": "3",
+      "price": 11.9,
+      "name": "San Severia",
+      "image": "./img/sanseveria.webp",
+      "descAlt": "Pianta di sanseviera, quasi indistruttibile",
+      "produttore": "Maria"
+    }
+  ],
+  "carrello": [
+    {
+      "id": "fa0b",
+      "prodottoId": "2",
+      "nome": "Crassula",
+      "prezzo": 5.6,
+      "quantita": 1
+    }
+  ],
+  "ordini": [
+    {
+      "id": "1730068509973",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-5102",
+      "prodotti": [
+        {
+          "id": "4350",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730079854817",
+      "nome": "ffff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-6173",
+      "prodotti": [
+        {
+          "id": "42d5",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        },
+        {
+          "id": "b7ca",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "97c0",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730079871253",
+      "nome": "ffff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "PP",
+      "prodotti": [
+        {
+          "id": "42d5",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        },
+        {
+          "id": "b7ca",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "97c0",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730108244061",
+      "nome": "ffff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "a790",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730108533294",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "a790",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "991a",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730108639605",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "a790",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "991a",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730109263491",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "a790",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "991a",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730109858731",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "PP",
+      "prodotti": [
+        {
+          "id": "45ad",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 2
+        },
+        {
+          "id": "9827",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730110010656",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "PP",
+      "prodotti": [
+        {
+          "id": "8863",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        },
+        {
+          "id": "1bae",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 2
+        }
+      ]
+    },
+    {
+      "id": "1730110911451",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "e461",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        },
+        {
+          "id": "2763",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 2
+        },
+        {
+          "id": "dd35",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 2
+        }
+      ]
+    },
+    {
+      "id": "1730111102301",
+      "nome": "fff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "7cd9",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 2
+        },
+        {
+          "id": "d7fb",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        },
+        {
+          "id": "15a7",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730111842014",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "5296",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 2
+        },
+        {
+          "id": "d5b9",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        },
+        {
+          "id": "defd",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 2
+        }
+      ]
+    },
+    {
+      "id": "1730112349526",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-9617",
+      "prodotti": [
+        {
+          "id": "732c",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "f0ac",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        },
+        {
+          "id": "5b9c",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730120826283",
+      "nome": "FfF",
+      "cognome": "FfF",
+      "email": "Ffff@fff.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-8546",
+      "prodotti": [
+        {
+          "id": "b927",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        },
+        {
+          "id": "4c3b",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 2
+        }
+      ]
+    },
+    {
+      "id": "1730142136339",
+      "nome": "ffff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-8683",
+      "prodotti": [
+        {
+          "id": "52d3",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 2
+        }
+      ]
+    },
+    {
+      "id": "1730142775519",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "PP",
+      "prodotti": [
+        {
+          "id": "0129",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730142870260",
+      "nome": "fghfgh",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "PP",
+      "prodotti": [
+        {
+          "id": "126a",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730145073388",
+      "nome": "ffff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "CC",
+      "numeroCarta": "****-****-****-8683",
+      "prodotti": [
+        {
+          "id": "0735",
+          "prodottoId": "1",
+          "nome": "Monstera Obliqua",
+          "image": "./img/monstera_obliqua.webp",
+          "prezzo": 9.9,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730146930890",
+      "nome": "ffff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "ritiro",
+      "stato": "confermato",
+      "metodoPagamento": "PP",
+      "prodotti": [
+        {
+          "id": "692c",
+          "prodottoId": "2",
+          "nome": "Crassula",
+          "image": "./img/crassula.webp",
+          "prezzo": 5.6,
+          "quantita": 1
+        }
+      ]
+    },
+    {
+      "id": "1730146987747",
+      "nome": "fff",
+      "cognome": "fff",
+      "email": "fbgfb@sdfsdfg.com",
+      "telefono": "0123456789",
+      "modalitaConsegna": "spedizione",
+      "stato": "confermato",
+      "via": "ff",
+      "civico": "ff",
+      "cap": "07550",
+      "citta": "ff",
+      "provincia": "ff",
+      "metodoPagamento": "SP",
+      "prodotti": [
+        {
+          "id": "22db",
+          "prodottoId": "3",
+          "nome": "San Severia",
+          "image": "./img/sanseveria.webp",
+          "prezzo": 11.9,
+          "quantita": 1
+        }
+      ]
+    }
+  ]
+}
