@@ -1,0 +1,85 @@
+{
+  "corsi": [
+      {
+          "name": "Cucina Italiana",
+          "description": "Un corso completo sulla tradizione culinaria italiana, dalle basi alle tecniche avanzate.",
+          "duration": "12 settimane",
+          "price": 450,
+          "id": 1,
+          "shortDescription": "Scopri i segreti della cucina italiana",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Storia dell'Arte",
+          "description": "Un viaggio attraverso i secoli dell'arte italiana, dal Rinascimento all'epoca moderna.",
+          "duration": "10 settimane",
+          "price": 350,
+          "id": 2,
+          "shortDescription": "Esplora i capolavori dell'arte italiana",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Lingua Italiana",
+          "description": "Corso intensivo di lingua italiana per tutti i livelli, dalla grammatica alla conversazione.",
+          "duration": "16 settimane",
+          "price": 400,
+          "id": 3,
+          "shortDescription": "Impara l'italiano con madrelingua",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Moda Italiana",
+          "description": "Scopri il mondo del fashion design italiano e le ultime tendenze del settore.",
+          "duration": "8 settimane",
+          "price": 500,
+          "id": 4,
+          "shortDescription": "Entra nel mondo della moda italiana",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Scultura",
+          "description": "Dalle tecniche classiche alle interpretazioni moderne della scultura italiana.",
+          "duration": "14 settimane",
+          "price": 550,
+          "id": 5,
+          "shortDescription": "Plasma la tua creatività",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Fotografia",
+          "description": "Corso professionale di fotografia con focus sullo stile italiano.",
+          "duration": "8 settimane",
+          "price": 380,
+          "id": 6,
+          "shortDescription": "Cattura la bellezza italiana",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Poesia",
+          "description": "Un percorso attraverso la poesia italiana, dalla classica alla contemporanea.",
+          "duration": "6 settimane",
+          "price": 250,
+          "id": 7,
+          "shortDescription": "Scopri il potere delle parole",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Ceramica",
+          "description": "Tecniche tradizionali e moderne della ceramica italiana.",
+          "duration": "10 settimane",
+          "price": 420,
+          "id": 8,
+          "shortDescription": "Crea arte con la ceramica",
+          "img": "../img/teamCreativness.jpg"
+      },
+      {
+          "name": "Architettura",
+          "description": "Studio dell'architettura italiana, dal classico al contemporaneo.",
+          "duration": "15 settimane",
+          "price": 600,
+          "id": 9,
+          "shortDescription": "Esplora l'architettura italiana",
+          "img": "../img/teamCreativness.jpg"
+      }
+  ]
+}
