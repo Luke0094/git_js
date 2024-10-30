@@ -65,6 +65,7 @@ document.getElementById("candidaturaForm").addEventListener("submit", function (
     }
 
     // Verifica accettazione privacy
+    
     const privacyCheck = document.getElementById("privacyCheck");
     if (!privacyCheck.checked) {
         privacyCheck.classList.add("is-invalid");
@@ -72,6 +73,13 @@ document.getElementById("candidaturaForm").addEventListener("submit", function (
     } else {
         privacyCheck.classList.remove("is-invalid");
     }
+
+    // Event listener per gestire il cambio di stato
+    document.getElementById("privacyCheck").addEventListener("change", function() {
+        if (this.checked) {
+            this.classList.remove("is-invalid");
+        }
+    });
 
     // Se il form è valido, mostra il modal di successo
     if (isValid) {
