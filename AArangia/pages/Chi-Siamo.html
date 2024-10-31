@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progetti - Un'esperienza Italiana</title>
+    <title>Chi Siamo - Un'esperienza Italiana</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style/style.css">
 </head>
@@ -36,25 +36,139 @@
         </div>
     </nav>
 
-    <!-- Main content -->
-    
-    <div class="container mt-5">
-        <!-- Questo div è fondamentale -->
-        <div id="rigaCorsi" class="row">
-            <!-- Le cards verranno inserite qui -->
-        </div>
+    <main class="flex-shrink-0">
+        <div class="container py-3">
+            <!-- Header section -->
+            <div class="text-center mb-3">
+                <h1>Chi Siamo</h1>
+                <p class="lead">La tua porta d'accesso alla cultura italiana</p>
+            </div>
 
-        <div class="text-center mt-4 mb-5">
-            <button id="spoilerBtn" type="button" class="btn btn-outline-primary" onclick="toggleCourses()">
-                Mostra Tutti i Corsi
-            </button>
-        </div>
-            
-
+            <!-- Main content -->
 
             
-        </div>
+            <div class="row g-3">
+                <!-- Info and contacts card -->
+                        <div class="col-md-6">
+                            <div class="info-card h-100">
+                                <!-- Storia section -->
+                                <div class="card-section storia-section">
+                                    <h2 class="section-title">La Nostra Storia</h2>
+                                    <p class="mb-0">Un'esperienza Italiana nasce dalla passione per la cultura e le tradizioni del nostro paese. 
+                                       La nostra missione è condividere l'eccellenza italiana attraverso corsi formativi di alta qualità.</p>
+                                </div>
+                                
+                                <!-- Grid dei contatti -->
+                                <div class="card-section contact-section">
+                                    <h3 class="section-subtitle mb-3">I Nostri Contatti</h3>
+                                    <div class="contact-grid">
+                                        <div class="contact-item">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <div class="contact-info">
+                                                <strong>Indirizzo</strong>
+                                                <span>Via Roma, 10, 00100 Roma, Italia</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="bi bi-telephone-fill"></i>
+                                            <div class="contact-info">
+                                                <strong>Telefono</strong>
+                                                <span>+39 123 456 7890</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <div class="contact-info">
+                                                <strong>Email</strong>
+                                                <span>info@italia.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="bi bi-clock-fill"></i>
+                                            <div class="contact-info">
+                                                <strong>Orari</strong>
+                                                <span>Lun-Ven: 9:00-18:00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <!-- Social Links -->
+                                <div class="social-section text-center">
+                                    <a href="#" class="social-link" aria-label="Facebook">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-link" aria-label="Instagram">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-link" aria-label="Twitter">
+                                        <i class="bi bi-twitter-x"></i>
+                                    </a>
+                                    <a href="#" class="social-link" aria-label="LinkedIn">
+                                        <i class="bi bi-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
+                <!-- Map card -->
+                <div class="col-md-6">
+                    <div class="map-container h-100">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6!2d12.4963!3d41.9022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDU0JzA3LjkiTiAxMsKwMjknNDYuNyJF!5e0!3m2!1sit!2sit!4v1635789012345!5m2!1sit!2sit" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact form -->
+                <div class="col-12">
+                    <div class="contact-form-container">
+                        <h2 class="section-title text-center mb-3">Scrivici</h2>
+                        <!-- Rimosso l'attributo action e aggiunto onsubmit="return false" -->
+                        <form id="contactForm" class="row g-2" novalidate onsubmit="return false" method="post">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="contactName" placeholder="Nome e Cognome" required>
+                                    <label for="contactName">Nome e Cognome *</label>
+                                    <div class="invalid-feedback">Inserisci il tuo nome e cognome.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="contactEmail" placeholder="Email" required>
+                                    <label for="contactEmail">Email *</label>
+                                    <div class="invalid-feedback">Inserisci un indirizzo email valido.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="contactPhone" placeholder="Telefono" required>
+                                    <label for="contactPhone">Telefono *</label>
+                                    <div class="invalid-feedback">Inserisci un numero di telefono valido.</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="contactMessage" placeholder="Messaggio" required style="height: 100px"></textarea>
+                                    <label for="contactMessage">Messaggio *</label>
+                                    <div class="invalid-feedback">Inserisci il tuo messaggio.</div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary" id="submitButton">
+                                    Invia Messaggio
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Apply Modal -->
@@ -323,6 +437,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/scriptPro.js" defer></script>
+    <script src="../js/script-info.js" defer></script>
 </body>
 </html>

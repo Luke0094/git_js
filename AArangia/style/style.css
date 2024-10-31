@@ -1,7 +1,20 @@
 /* Impostazioni di base */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: #FFF3E0;
     font-family: Arial, sans-serif;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /* Navbar */
@@ -16,6 +29,99 @@ body {
 
 .nav-link:hover {
     color: #F5F5F5 !important;
+}
+
+/* Stili Carosello */
+#carouselExample {
+    position: relative;
+    height: 33vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.carousel-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.25);
+}
+
+.carousel-control:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: #fff;
+    transform: scale(1.2);
 }
 
 /* Modale Candidatura e Accesso */
@@ -99,10 +205,13 @@ body {
 
 /* Footer */
 .footer {
+    flex-shrink: 0;
     background-color: #FF8C42;
     color: #fff;
     padding: 1rem;
     text-align: center;
+    margin-top: auto;
+    width: 100%;
 }
 
 .footer p {
@@ -118,6 +227,12 @@ body {
     color: #F5F5F5;
 }
 
+.flex-shrink-0 {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Dropdown menu */
 .dropdown-menu {
     background-color: #FF8C42;
@@ -125,12 +240,17 @@ body {
     border-radius: 5px;
 }
 
-/* Colori per interazione */
-.modal .form-check-input:checked {
-    background-color: #FF5722;
-    border-color: #FF5722;
+/* Animazioni e transizioni */
+.carousel-slide {
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
+.carousel-slide.fade {
+    opacity: 0;
+}
+
+/* Feedback messages */
 .feedback-message {
     position: fixed;
     top: 20px;
@@ -170,4 +290,172 @@ body {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-10px); }
     75% { transform: translateX(10px); }
+}
+
+/* Media Queries per responsività */
+@media (max-width: 768px) {
+    #carouselExample {
+        height: 25vh;
+    }
+
+    .carousel-control {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .course-selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #carouselExample {
+        height: 20vh;
+    }
+
+    .course-selection {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Stili per la pagina Chi Siamo */
+h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.lead {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Cards */
+.info-card, .map-container, .contact-form-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+
+.info-card {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sezione Storia */
+.storia-section {
+    flex: 0 0 auto;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.storia-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Sezione Contatti */
+.contact-section {
+    flex: 1;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.contact-item i {
+    color: #FF8C42;
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info strong {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-info span {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.3;
+}
+
+/* Social Section */
+.social-section {
+    flex: 0 0 auto;
+    padding-top: 1rem;
+    margin-top: auto;
+    border-top: 1px solid #eee;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 0.5rem;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    color: #FF8C42;
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .contact-item {
+        gap: 0.5rem;
+    }
+}
+
+/* Hover effects */
+.contact-item {
+    transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.info-card {
+    animation: fadeIn 0.5s ease-out;
 }
