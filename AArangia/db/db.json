@@ -7,7 +7,7 @@
       "price": 450,
       "id": 1,
       "shortDescription": "Scopri i segreti della cucina italiana",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/cucina_italiana.jpg"
     },
     {
       "name": "Storia dell'Arte",
@@ -16,7 +16,7 @@
       "price": 350,
       "id": 2,
       "shortDescription": "Esplora i capolavori dell'arte italiana",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/storia_dell'arte.webp"
     },
     {
       "name": "Lingua Italiana",
@@ -25,7 +25,7 @@
       "price": 400,
       "id": 3,
       "shortDescription": "Impara l'italiano con madrelingua",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/lingua_italiana.webp"
     },
     {
       "name": "Moda Italiana",
@@ -34,7 +34,7 @@
       "price": 500,
       "id": 4,
       "shortDescription": "Entra nel mondo della moda italiana",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/moda_italiana.webp"
     },
     {
       "name": "Scultura",
@@ -43,7 +43,7 @@
       "price": 550,
       "id": 5,
       "shortDescription": "Plasma la tua creatività",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/scultura.jpg"
     },
     {
       "name": "Fotografia",
@@ -52,7 +52,7 @@
       "price": 380,
       "id": 6,
       "shortDescription": "Cattura la bellezza italiana",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/fotografia.jpg"
     },
     {
       "name": "Poesia",
@@ -61,7 +61,7 @@
       "price": 250,
       "id": 7,
       "shortDescription": "Scopri il potere delle parole",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/poesia.jpg"
     },
     {
       "name": "Ceramica",
@@ -70,7 +70,7 @@
       "price": 420,
       "id": 8,
       "shortDescription": "Crea arte con la ceramica",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/ceramica.jpg"
     },
     {
       "name": "Architettura",
@@ -79,7 +79,7 @@
       "price": 600,
       "id": 9,
       "shortDescription": "Esplora l'architettura italiana",
-      "img": "../img/teamCreativness.jpg"
+      "img": "../img/architettura.jpg"
     }
   ],
   "iscrizioni": [],

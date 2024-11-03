@@ -11,7 +11,12 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">Logo Italia</a>
+            
+            <div style="overflow: hidden;">
+                <a class="navbar-brand" href="./Home.html"> <img src="./img/logo.png"  alt="logo del sito" style="width: auto ;height: 50px ;overflow:hidden; ">
+                </a>
+            </div>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -41,16 +46,28 @@
     <main class="flex-shrink-0">
         <div class="container">
             <!-- Carosello -->
-            <div class="carousel flex">
-                <div id="carouselExample" class="carousel slide">
+            <div class="carousel flex py-5">
+                <div id="carouselExample" class="carousel slide border border-warning border-2">
                     <!-- Il contenitore delle immagini verrà popolato automaticamente da JavaScript -->
                 </div>
             </div>
     
             <div class="infoHome">
 
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iusto qui praesentium exercitationem totam est dicta necessitatibus quos, libero quisquam laboriosam cupiditate et accusamus blanditiis facere labore ipsum consectetur ea.</p>
+                <div class="presentation" style="padding-top: 20px;">
 
+                    <p>Inizia il tuo viaggio nel mondo della creatività con Arangy! Qui trovi corsi progettati per liberare il tuo potenziale artistico e spingerti oltre i confini dell’immaginazione. Che tu voglia affinare le tue abilità o esplorare nuove forme di espressione, Arangy è il luogo giusto per sperimentare, imparare e crescere insieme.
+                    </p>
+                    <img src="./img/textdiv.png" alt="Divisore testo floreale" style="height:30px ; width:auto" >
+                    <p>
+                        Dai primi passi nel design, alla fotografia, fino alla scrittura creativa e oltre, i nostri corsi sono pensati per essere stimolanti, divertenti e accessibili a tutti. Ogni lezione è un’opportunità per dare nuova forma alle tue idee in un ambiente dove innovazione e ispirazione sono al centro.
+                    </p>
+                    <img src="./img/textdiv.png" alt="Divisore testo floreale" style="height:30px ; width:auto" >
+                    <p>    
+                        Arangy: dove le idee prendono forma, colore e vita. Unisciti a noi e inizia oggi stesso!
+                    </p>
+    
+                    </div>
 
             </div>
 
@@ -103,9 +120,44 @@
                         </div>
     
                         <div class="col-md-12 mb-3">
-                            <label class="form-label">Corsi scelti (seleziona fino a 3)</label>
+                            <p>Corsi scelti (seleziona fino a 3)</p>
                             <div class="course-selection">
-                                <!-- I checkbox verranno popolati dinamicamente dal JavaScript -->
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="cucina">
+                                    <label class="form-check-label">Cucina Italiana</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="arte">
+                                    <label class="form-check-label">Storia dell'Arte</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="lingua">
+                                    <label class="form-check-label">Lingua Italiana</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="moda">
+                                    <label class="form-check-label">Moda Italiana</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="scultura">
+                                    <label class="form-check-label">Scultura</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="fotografia">
+                                    <label class="form-check-label">Fotografia</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="poesia">
+                                    <label class="form-check-label">Poesia</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="ceramica">
+                                    <label class="form-check-label">Ceramica</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input course-checkbox" type="checkbox" value="architettura">
+                                    <label class="form-check-label">Architettura</label>
+                                </div>
                             </div>
                             <div id="courseSelectionError" class="invalid-feedback"></div>
                         </div>
